@@ -1,0 +1,8 @@
+class Solution(object):
+    def checkIfPangram(self, sentence):
+        input_sentence = list(set(sentence))
+        input_sentence.sort()
+        if len(input_sentence) == 26:
+            return True
+        else:
+            return False
