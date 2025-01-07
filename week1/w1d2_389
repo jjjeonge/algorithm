@@ -1,0 +1,9 @@
+class Solution(object):
+    def findTheDifference(self, s, t):
+        t_dic = {}
+        s_dic = {}
+        for letter in t: t_dic[letter]=t.count(letter)
+        for letter in s: s_dic[letter]=s.count(letter)
+        for key in t_dic:
+            if key not in s_dic or t_dic[key] != s_dic[key]:
+                return key
