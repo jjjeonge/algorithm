@@ -1,0 +1,15 @@
+class Solution(object):
+    def findWords(self, words):
+        first = set("qwertyuiop")
+        second = set("asdfghjkl")
+        third = set("zxcvbnm")
+        output = []
+
+        for word in words:
+            temp_word = set(word.lower())
+            if (temp_word-first == set([])) \
+            or (temp_word-second == set([])) \
+            or (temp_word-third == set([])):
+                output.append(word)
+
+        return output
