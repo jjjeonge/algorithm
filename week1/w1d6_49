@@ -1,0 +1,14 @@
+class Solution(object):
+    def groupAnagrams(self, strs):
+        sorted_dic = {}
+        output=[]
+
+        for str in strs:
+            sorted_str = "".join(sorted(str))
+            if sorted_str not in sorted_dic:
+                output.append([])
+                sorted_dic[sorted_str] = output.index([])
+                output[output.index([])].append(str)
+            else:
+                output[sorted_dic[sorted_str]].append(str)
+        return output
